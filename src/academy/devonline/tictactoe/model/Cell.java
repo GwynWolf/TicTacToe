@@ -11,6 +11,14 @@ public class Cell {
         return row;
     }
 
+    @Override
+    public String toString() {
+        return "Cell{" +
+                "row=" + row +
+                ", column=" + column +
+                '}';
+    }
+
     public int getColumn() {
         return column;
     }
