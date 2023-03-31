@@ -1,5 +1,7 @@
-package academy.devonline.tictactoe;
+package academy.devonline.tictactoe.component;
 
+
+import academy.devonline.tictactoe.model.GameTable;
 
 import java.util.Random;
 
