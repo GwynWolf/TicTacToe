@@ -1,5 +1,6 @@
 package academy.devonline.tictactoe.component;
 
+import academy.devonline.tictactoe.component.keypad.CellNumberConverter;
 import academy.devonline.tictactoe.model.Cell;
 import academy.devonline.tictactoe.model.GameTable;
 
@@ -15,8 +16,6 @@ public class UserMove {
         this.cellNumberConverter = cellNumberConverter;
     }
 
-    public UserMove() {
-    }
 
     public void make(final GameTable gameTable) {
         while (true) {

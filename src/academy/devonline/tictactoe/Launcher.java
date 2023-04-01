@@ -16,12 +16,14 @@ package academy.devonline.tictactoe;
  */
 
 import academy.devonline.tictactoe.component.*;
+import academy.devonline.tictactoe.component.keypad.CellNumberConverter;
+import academy.devonline.tictactoe.component.keypad.DesktopNumericKeypadCellNumberConverter;
 
 /**
  * @author GwynWolf
  */
 public final class Launcher {
-    static final CellNumberConverter cellNumberConverter = new CellNumberConverter();
+    static final CellNumberConverter cellNumberConverter = new DesktopNumericKeypadCellNumberConverter();
     public static void main(final String[] args) {
         Game game = new Game(new DataPrinter(cellNumberConverter),
                 new ComputerMove(),
