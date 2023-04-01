@@ -5,11 +5,11 @@ import academy.devonline.tictactoe.model.Cell;
 /**
  * @author GwynWolf
  */
-public class DesktopNumericKeypadCellNumberConverter implements CellNumberConverter {
+public class TerminalNumericKeypadCellNumberConverter implements CellNumberConverter {
     private final char[][] mapping = {
-            {'7', '8', '9'},
+            {'1', '2', '3'},
             {'4', '5', '6'},
-            {'1', '2', '3'}
+            {'7', '8', '9'}
     };
 
     @Override
