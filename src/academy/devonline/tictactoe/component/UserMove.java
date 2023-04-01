@@ -9,10 +9,14 @@ import java.util.Scanner;
  * @author GwynWolf
  */
 public class UserMove {
-    private final char[][] mapping = {
-            {'7', '8', '9'},
-            {'4', '5', '6'},
-            {'1', '2', '3'}};
+    private CellNumberConverter cellNumberConverter;
+
+    public UserMove(final CellNumberConverter cellNumberConverter) {
+        this.cellNumberConverter = cellNumberConverter;
+    }
+
+    public UserMove() {
+    }
 
     public void make(final GameTable gameTable) {
         while (true) {
@@ -37,12 +41,7 @@ public class UserMove {
             if (userInput.length() == 1) {
                 ch = userInput.charAt(0);
                 if (ch <= '9' && ch >= '1')
-                    for (int i = 0; i < 3; i++) {
-                        for (int j = 0; j < 3; j++) {
-                            if (mapping[i][j] == ch)
-                                return new Cell(i, j);
-                        }
-                    }
+                    return cellNumberConverter.charToCell(ch);
             }
         }
     }

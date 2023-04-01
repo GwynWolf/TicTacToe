@@ -21,10 +21,11 @@ import academy.devonline.tictactoe.component.*;
  * @author GwynWolf
  */
 public final class Launcher {
+    static final CellNumberConverter cellNumberConverter = new CellNumberConverter();
     public static void main(final String[] args) {
-        Game game = new Game(new DataPrinter(),
+        Game game = new Game(new DataPrinter(cellNumberConverter),
                 new ComputerMove(),
-                new UserMove(),
+                new UserMove(cellNumberConverter),
                 new WinnerVerifier(),
                 new CellVerifier());
         game.play();

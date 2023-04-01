@@ -8,15 +8,27 @@ import academy.devonline.tictactoe.model.GameTable;
  */
 
 public class DataPrinter {
+
+    final CellNumberConverter cellNumberConverter;
+
+    public DataPrinter(final CellNumberConverter cellNumberConverter) {
+        this.cellNumberConverter = cellNumberConverter;
+    }
+
     public void printMappingTable() {
-        System.out.println("""
-                -------------
-                | 7 | 8 | 9 |
-                -------------
-                | 4 | 5 | 6 |
-                -------------
-                | 1 | 2 | 3 |
-                -------------""");
+        StringBuffer result = new StringBuffer("-------------\n");
+        for (int i = 0; i < 3; i++) {
+            result.append("| ");
+            for (int j = 0; j < 3; j++) {
+                result.append(cellNumberConverter.cellToChar(new Cell(j, i)));
+                if (j == 2)
+                    result.append(" |\n");
+                else
+                    result.append(" | ");
+            }
+            result.append("-------------\n");
+        }
+        System.out.println(result);
     }
 
     public void printGameTable(final GameTable gameTable) {
