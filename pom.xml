@@ -66,6 +66,7 @@
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
         <maven-site-plugin.version>3.9.1</maven-site-plugin.version>
         <maven-project-info-reports-plugin.version>3.1.2</maven-project-info-reports-plugin.version>
+        <maven-assembly-plugin.version>3.5.0</maven-assembly-plugin.version>
     </properties>
 
     <build>
@@ -119,5 +120,25 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>${maven-assembly-plugin.version}</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/assembly/distribution-windows.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id> <!-- this is used for inheritance merges -->
+                        <phase>package</phase> <!-- bind to the packaging phase -->
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 </project>
